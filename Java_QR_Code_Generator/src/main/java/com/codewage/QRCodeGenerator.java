@@ -18,7 +18,7 @@ public class QRCodeGenerator {
 	public static void main(String[] args) throws WriterException, IOException {
 		
 		//URL that will open when we scan the QR
-		String URL = "https://www.github.com";
+		String url = "https://www.github.com";
 
 		//Output image file with QR
 		String qrOutputPath = "qr.png";
@@ -30,7 +30,7 @@ public class QRCodeGenerator {
 
 		qrMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);  
 
-		generateQRcode(URL, qrOutputPath, charsetEncoding, qrMap, 200, 200);
+		generateQRcode(url, qrOutputPath, charsetEncoding, qrMap, 200, 200);
 
 		System.out.println("QR Image generated successfully."); 
 

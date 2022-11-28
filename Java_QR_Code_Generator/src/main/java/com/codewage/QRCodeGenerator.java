@@ -16,7 +16,7 @@ import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 public class QRCodeGenerator {
 
 	public static void main(String[] args) throws WriterException, IOException {
-		
+
 		//URL that will open when we scan the QR
 		String url = "https://www.github.com";
 
@@ -36,11 +36,14 @@ public class QRCodeGenerator {
 
 	}
 
-	public static void generateQRcode(String URL, String qrOutputPath, String charset, Map map, int height, int width) throws WriterException, IOException  
+	public static void generateQRcode(String URL, String qrOutputPath, 
+			String charset, Map map, int height, int width) throws WriterException, IOException  
 	{  
-		BitMatrix matrix = new MultiFormatWriter().encode(new String(URL.getBytes(charset), charset), BarcodeFormat.QR_CODE, width, height);  
+		BitMatrix matrix = new MultiFormatWriter().encode(new String(URL.getBytes(charset), charset), 
+				BarcodeFormat.QR_CODE, width, height);  
 
-		MatrixToImageWriter.writeToFile(matrix, qrOutputPath.substring(qrOutputPath.lastIndexOf('.') + 1), new File(qrOutputPath));  
+		MatrixToImageWriter.writeToFile(matrix, qrOutputPath.substring(qrOutputPath.lastIndexOf('.') + 1), 
+				new File(qrOutputPath));  
 	}  
 
 
